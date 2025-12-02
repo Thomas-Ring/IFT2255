@@ -1,4 +1,3 @@
-Voici la version améliorée avec la définition de l'API REST et l'ajout des contraintes manquantes :
 
 # Description du domaine
 
