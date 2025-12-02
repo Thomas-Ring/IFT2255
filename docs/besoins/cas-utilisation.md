@@ -38,7 +38,7 @@ Ces cas permettent de comprendre **ce que fait le système**, sans entrer dans l
 
 ### CU01 - Exporter des données
 
-**Acteurs** : Étudiant (principal), Base de données (secondaire), API Planifium (secondaire).  
+**Acteurs** : Étudiant (principal).  
 **Préconditions** : L'étudiant a un compte et y est connecté. L'étudiant a sélectionné des cours.  
 **Postconditions** : L'étudiant a téléchargé un document contenant les données désirées.  
 **Déclencheur** : L'étudiant clique sur le bouton "Exporter" pendant que les cours désirés sont sélectionnés.  
@@ -48,7 +48,7 @@ Ces cas permettent de comprendre **ce que fait le système**, sans entrer dans l
 ---
 ### CU02 - Modérer les avis étudiants
 
-**Acteurs** : Modérateur (Administrateur) (principal), Système (Base de données) (secondaire)  
+**Acteurs** : Modérateur (Administrateur) (principal), Système (secondaire)  
 **Préconditions** : Le modérateur est authentifié et connecté. Le modérateur dispose des permissions d'administration. Il existe une file d'attente d'avis en attente de modération.  
 **Postconditions** : L'avis est soit approuvé (et devient visible), soit rejeté (et est supprimé ou archivé). La base de données est mise à jour.  
 **Déclencheur** : Un nouvel avis est soumis via le bot Discord OU un utilisateur signale un avis déjà publié.  
@@ -87,7 +87,7 @@ Ces cas permettent de comprendre **ce que fait le système**, sans entrer dans l
 ---
 ### CU03 - Consulter un profil étudiant
 
-**Acteurs** : Étudiant (Principal), Base de données (Secondaire)  
+**Acteurs** : Étudiant (Principal)  
 **Préconditions** : L'étudiant qui fait la recherche et l'étudiant recherché ont leurs profils respectifs.  
 **Postconditions** : Le profil de l'étudiant recherché apparaît à l'étudiant qui fait la recherche.    
 **Déclencheur** : L'étudiant qui fait la recherche clique sur le profil de l'étudiant recherché dans une liste de profils dans le module de recherche de profils.  
@@ -129,7 +129,7 @@ Ces cas permettent de comprendre **ce que fait le système**, sans entrer dans l
 
 ---
 ### CU05 - Affficher tableau de bord
-**Acteurs** : Étudiant (principal), Base de données (secondaire), API Planifium (secondaire)    
+**Acteurs** : Étudiant (principal)    
 **Préconditions** : L’étudiant est connecté et a un profil existant.  
 **Postconditions** : Le tableau de bord est affiché avec les informations disponibles et interactives. 
 **Déclencheur** : L’étudiant clique sur le bouton ou le menu « Tableau de bord » après s’être connecté.    
@@ -161,7 +161,7 @@ Ces cas permettent de comprendre **ce que fait le système**, sans entrer dans l
 ---
 ### CU06 - Comparer Cours
 
-**Acteurs** : Étudiant (principal), Base de données (secondaire), API Planifium (secondaire)  
+**Acteurs** : Étudiant (principal)  
 **Préconditions** : L’étudiant est connecté et a accès aux cours à comparer.  
 **Postconditions** : L’étudiant visualise un tableau comparatif à jour des cours sélectionnés.  
 **Déclencheur** : L’étudiant sélectionne l’option « Comparer cours » dans le menu ou depuis la page d’un cours.   
@@ -171,7 +171,7 @@ Ces cas permettent de comprendre **ce que fait le système**, sans entrer dans l
 ---
 ### CU07 - Créer/Mettre à jour un profil étudiant
 
-**Acteurs** : Étudiant (principal), Système (Base de données) (secondaire)  
+**Acteurs** : Étudiant (principal), Système (secondaire)  
 **Préconditions** : Pour la création : L'étudiant n'a pas de compte. Pour la mise à jour : L'étudiant est authentifié.  
 **Postconditions** : Succès (Création) : Nouveau profil créé. Succès (Mise à jour) : Modifications sauvegardées. Échec : Message d'erreur affiché.  
 **Déclencheur** : Création : Nouvel utilisateur s'inscrit. Mise à jour : Étudiant authentifié modifie son profil.  
@@ -181,7 +181,7 @@ Ces cas permettent de comprendre **ce que fait le système**, sans entrer dans l
 ---
 ### CU08 - Afficher les avis étudiants pour un cours
 
-**Acteurs** : Étudiant (principal), Système (Base de données) (secondaire)  
+**Acteurs** : Étudiant (principal), Système (secondaire)  
 **Préconditions** : Le cours existe. Il existe au moins un avis approuvé et le seuil d'agrégation (n≥5) est atteint.  
 **Postconditions** : Succès : Avis agrégés et commentaires affichés. Échec : Message "Avis insuffisants" affiché.  
 **Déclencheur** : L'étudiant consulte la fiche d'un cours et souhaite voir la section avis.  
@@ -191,7 +191,7 @@ Ces cas permettent de comprendre **ce que fait le système**, sans entrer dans l
 ---
 ### CU09 - Rechercher cours
 
-**Acteurs** : Étudiant (principal), API Planifium (secondaire), Base de données (secondaire)  
+**Acteurs** : Étudiant (principal)  
 **Préconditions** : L’étudiant est connecté et a un profil existant.  
 **Postconditions** : La liste des cours correspondant à la recherche est affichée avec indication d’éligibilité.  
 **Déclencheur** : L’étudiant saisit un code, titre ou mot-clé dans la barre de recherche et appuie sur « Rechercher ».    
@@ -217,7 +217,7 @@ Ces cas permettent de comprendre **ce que fait le système**, sans entrer dans l
 ---
 ### CU10 - Afficher résultats académiques d’un cours
 
-**Acteurs** : Étudiant (principal), API Planifium (secondaire), Base de données (secondaire)  
+**Acteurs** : Étudiant (principal)  
 **Préconditions** :  L’étudiant est connecté et consulte la fiche d’un cours existant.  
 **Postconditions** : Les résultats académiques disponibles du cours sont affichés.  
 **Déclencheur** : L’étudiant clique sur le bouton ou le lien « Résultats académiques » depuis la fiche d’un cours.  
@@ -227,7 +227,7 @@ Ces cas permettent de comprendre **ce que fait le système**, sans entrer dans l
 ---
 ### CU11 - Consulter la fiche d’un cours
 
-**Acteurs** : Étudiant (principal), Base de données (secondaire) API Planifium (secondaire)  
+**Acteurs** : Étudiant (principal)  
 **Préconditions** : L'étudiant a un profil et y est connecté. La fiche du cours qu'il recherche existe.  
 **Postconditions** : Les données détaillées du cours recherché sont affichées.  
 **Déclencheur** : L'étudiant clique sur le cours désiré dans la liste des cours correspondant à sa recherche dans le module de recherche de cours.  
@@ -277,5 +277,3 @@ Ces cas permettent de comprendre **ce que fait le système**, sans entrer dans l
 **Déclencheur** : L’utilisateur consulte un cours et sélectionne l’option « Voir contribution au programme ».  
 **Dépendances** : Base de données des programmes, API Planifium (structure du programme et types de cours).  
 **But** : Aider l’étudiant à comprendre l’impact d’un cours sur sa progression vers le diplôme, et à planifier ses choix en fonction des exigences restantes.
-
----
