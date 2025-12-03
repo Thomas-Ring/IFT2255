@@ -10,10 +10,7 @@ Cette section présente les principaux diagrammes du projet, incluant les diagra
 
 ## Diagrammes
 
-**Diagramme des cas d'utilisations**
 
-
-**Diagramme d'activité**
 ### Recherche de cours (CU09)
 ![](../images/recherche-cours.jpg)
 
@@ -31,6 +28,10 @@ Cette section présente les principaux diagrammes du projet, incluant les diagra
 ![Diagramme du système](../images/C4 ChoixCours 2.jpg)
 ![Diagramme du système](../images/c4-niveau3.jpg)
 
+
+
+**Diagramme des cas d'utilisation**
+![Diagramme du système](../images/Diagramme_CUs.png)
 
 **Diagramme des classes**
 ![Diagramme du système](../images/diagramme_classes.png)
