@@ -19,6 +19,7 @@ Cette section présente les principaux diagrammes du projet, incluant les diagra
 **Modèle C4**
 ![Diagramme du système](../images/C4 ChoixCours 1.jpg)
 ![Diagramme du système](../images/C4 ChoixCours 2.jpg)
+![Diagramme C4 Niveau 3](../images/c4-niveau3.jpg)
 
 
 **Diagramme des classes**
