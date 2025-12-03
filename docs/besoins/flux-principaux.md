@@ -12,6 +12,8 @@ Cette section présente les principaux diagrammes du projet, incluant les diagra
 
 **Diagramme des cas d'utilisations**
 
+
+**Diagramme d'activité**
 ### Recherche de cours (CU09)
 ![](../images/recherche-cours.jpg)
 
@@ -23,9 +25,6 @@ Cette section présente les principaux diagrammes du projet, incluant les diagra
 
 ### Soumission d'avis (Phase 2)
 ![](../images/soumettre-avis.jpg)
-
-**Diagramme d'activité**
-![Diagramme du système](../images/diagramme-activite.png)
 
 **Modèle C4**
 ![Diagramme du système](../images/C4 ChoixCours 1.jpg)
