@@ -1,0 +1,7 @@
+### Comparer deux cours
+POST http://localhost:7070/courses/compare
+Content-Type: application/json
+
+{
+  "courseIds": ["IFT2255", "IFT2015"]
+}
