@@ -24,6 +24,4 @@ title: Conception - Architecture
 
 ## Diagramme d’architecture (Modèle C4)
 
-## Modèle C4 Niveau 3 : Composants Backend
-
-![Diagramme C4 Niveau 3 - Composants backend](../images/c4-niveau3.jpg)
+![](../images/c4-niveau3.jpg)
