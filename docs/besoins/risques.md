@@ -6,17 +6,8 @@ title: Analyse des besoins - Risques
 
 ## Identification des risques
 
-### Risque 1 – Absence prolongée d’un membre clé  
-
-- **Probabilité** : Moyenne  
-- **Impact** : Élevé  
-- **Plan de mitigation** :  
-  - Répartition claire des responsabilités  
-  - Documentation régulière du travail  
-  - Favoriser le pair programming
-
-### Risque 1 – Achalandages causant ralentissements et pannes
-
+### Risque 1 – Achalandages pouvant causer des ralentissements et des pannes
+- **Définition** : Lorsque plusieurs utilisateur.ices utilisent le service en même temps, il est possible que certain.es attendent longtemps pour que leur demande soit traitée, étant donné que le traitement de chaque requête prend un certain temps, causant une file d'attente.
 - **Probabilité** : Élevée
 - **Impact** : Élevé
 - **Plan de mitigation** :  
@@ -24,7 +15,8 @@ title: Analyse des besoins - Risques
   - Envoyer des communications aux utilisateur.ices de ne pas consulter le site web aux dates limites de choix de cours.
 
 ### Risque 2 – Obsolescence des données de PlanifiUM
-
+- **Définition** : Les données de PlanifiUM doivent être régulièrement mises à jour afin d'être représentatives de la réalité. Si ces données ne sont pas mises à jour assez assidûment, il est possible que nous utilisions des données erronnées, ce qui n'aide pas les utilisateur.ices.
+Par exemple, si un cours qui était jadis donné en automne arrête de l'être, mais que PlanifiUM n'a pas cette information, les utilisateur.ices ne feront pas des choix éclairés grâce à notre plateforme. Il n'atteindra donc pas son objectif.
 - **Probabilité** : Moyenne
 - **Impact** : Moyen
 - **Plan de mitigation** : 
@@ -34,6 +26,7 @@ title: Analyse des besoins - Risques
 
 ### Risque 3 – Trop peu d'avis d'étudiant.es
 
+- **Définition** : Si trop peu d'étudiant.es donnent des avis pour les cours, notre logiciel échouera dans un de ses objectifs principaux: rassembler divers types de données en un endroit. Vu qu'il faut 5 avis par cours minimum pour les afficher, il y a un risque qu'une grande proportion des cours n'atteindront pas ce seuil.
 - **Probabilité** : Moyenne
 - **Impact** : Moyenne
 - **Plan de mitigation** :  
@@ -43,6 +36,7 @@ title: Analyse des besoins - Risques
 
 ### Risque 4 – Informations erronnées quant aux parcours étudiants possibles
 
+- **Définition** : Similairement aux données de PlanifiUM, la logique du système concernant les parcours étudiants doit être mise à jour afin de refléter la réalité. En effet, des refontes de programmes vont arriver, et notre système devra changer en conséquence. Sinon, les utilisateur.ices seraient mal informés par notre système, ce qui pourrait avoir des conséquences graves sur leur parcours s'iels s'y fient.
 - **Probabilité** : Faible
 - **Impact** : Élevé
 - **Plan de mitigation** :  
@@ -52,10 +46,12 @@ title: Analyse des besoins - Risques
 
 ### Risque 5 – Conflits temporaires entre les données présentées par notre système et celles présentées ailleurs, comme sur les sites de l'Université.
 
+- **Définition** : Même dans un cas où notre système a des données parfaitement à jour, d'autres sources de données pourraient ne pas l'être, notamment des sources officielles de l'Université. Ceci pourrait causer de la confusion chez les utilisateur.ices, étant donné qu'il est commun (et recommandable) de consulter les sources officielles afin de s'assurer que ses choix de parcours sont possibles.
+Il est aussi possible que les sources officielles soient mises à jour avant les nôtres, ce qui causerait aussi de la confusion, ainsi qu'un manque de confiance en notre service.
 - **Probabilité** : Forte
 - **Impact** : Moyenne
 - **Plan de mitigation** :  
-  - Indiquer aux utilisateurs.ices que nous savons que des discordances existent, et de faire confiance à nos données.
+  - Indiquer aux utilisateurs.ices que nous savons que des discordances existent, et de communiquer avec les TGDE en cas de doute.
   - Communiquer avec l'Université lorsque nous mettons à jour des données qui se retrouvent aussi sur leurs sites web.
 
 ## Modification du processus opérationnel

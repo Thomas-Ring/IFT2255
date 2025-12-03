@@ -1,103 +1,78 @@
-# Template de site web pour IFT2255
+# Projet Choix de Cours - Université de Montréal
 
-Ce projet est un template pour le rapport à produire pour le cours IFT2255 (Génie logiciel), construit avec [MkDocs](https://www.mkdocs.org/) et le thème [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/).
+## Description
 
-## Prérequis
+Ce projet vise à créer une **plateforme web** pour aider les étudiants de l’Université de Montréal à faire des **choix de cours éclairés**.  
+La plateforme centralise et combine :
 
-Assurez-vous d’avoir les outils suivants installés :
+- **Données officielles** : API Planifium (catalogue des programmes et cours, horaires), résultats académiques agrégés (moyenne finale, nombre d’inscrits, nombre d’échecs)  
+- **Avis étudiants** : collectés via un bot Discord, comprenant difficulté perçue, charge de travail estimée, et commentaires optionnels  
 
-- Python **3.11** ou plus récent
-- `pip` (gestionnaire de paquets Python)
-- `pipenv` ou équivalent (gestion d’environnement virtuel) 
-  - Évite de polluer votre système et les conflits de version.
-  - Installez-le avec `pip install pipenv`.
+La plateforme permet aux étudiants de :
 
-## Pour commencer
+- Rechercher des cours par code, titre ou mot-clé
+- Vérifier l’éligibilité à un cours (prérequis, co-requis, cycle, contraintes de programme)
+- Consulter les résultats académiques agrégés
+- Afficher et modérer les avis étudiants
+- Comparer plusieurs cours pour estimer la charge totale
+- Créer un profil et personnaliser les résultats selon leurs préférences
+- Gérer leurs favoris
+- Créer une simulation d’horaire
+- Visualiser l’intégration des cours dans leur programme de diplôme
 
-### Option 1: Le répertoire n'est pas encore créé
+> La phase 1 du projet se concentre sur l’**analyse des besoins**, la **spécification testable** et la **modélisation du système**. L’implémentation complète et l’UI finale sont prévues pour les phases suivantes.
 
-1. Cliquez sur le bouton `Use this template` sur GitHub.
-2. Choisissez l'option `Create a new repository`.
-3. À la fin des étapes, vous devriez avoir un nouveau répertoire avec le contenu du template.
+---
 
-### Option 2: Le répertoire existe déjà
+## Objectifs de la Phase 1
 
-1. Clonez ce dépôt (optionnel) pour obtenir le template localement 
-```bash
-git clone git@github.com:udem-diro/template-rapport-ift2255.git
-```
-2. Copiez les fichiers du template (en local) dans votre répertoire de projet.
+- Définir le **cadre du projet** : acteurs, objectifs, contraintes et hypothèses  
+- Analyser et transformer la **liste de souhaits en exigences vérifiables**  
+- Identifier les **risques et besoins non fonctionnels**  
+- Produire les **diagrammes de cas d’utilisation et d’activités**  
+- Élaborer le **modèle C4** pour illustrer l’architecture du système  
+- Documenter les **décisions initiales** et limites techniques  
 
-> Note : Cette option est utile si vous souhaitez récupérer le contenu du template sans créer un nouveau dépôt (répertoire).
+---
 
-## Installation
+## Équipe
 
-> Vous avez maintenant le contenu du template sur votre poste. Il ne reste qu’à installer les dépendances pour commencer à l’utiliser.
+| Nom complet | Matricule | Discord |
+|------------|-----------|--------|
+| Membre 1-Ring Thomas   | 20162157     | @papi_speedrun |
+| Membre 2-Bencheikh El Atmani Ayoub   | 20237691    | @yubito04 |
+| Membre 3-Messaad Abdelmouhcine   | 20287581     | @abdel_kb99 |
+| Membre 4-Ujineza Ursuline   | 20272011     | @boredGenie |
 
-1. Activez l'environnement virtuel avec 
-```bash
-pipenv shell
-```
-2. Installez les dépendances listées dans `requirements.txt` (à exécuter dans le répertoire du projet) :
+---
 
-```bash
-pip install -r requirements.txt
-```
+## Cas d’utilisation (CU) principaux
 
-## Utilisation
+La plateforme couvre les **CU suivants** :
 
-> Avant toute utilisation, assurez-vous que l’environnement virtuel est activé (`pipenv shell`).
+1.Exporter les données souhaitées
+2.Modérer les avis étudiants
+3.Consulter un profil
+4.Gérer ses favoris
+5.Afficher tableau de bord
+6.Comparer cours
+7.Créer profil
+8.Afficher avis étudiant
+9.Rechercher cours
+10.Afficher résultats académiques d’un cours
+11.Consulter la fiche d’un cours
+12.Créer une simulation d’horaire
+13. Consulter la place d’un cours dans le programme 
 
-### Développement local
+> La documentation contient la **description détaillée de 5 CU clés** avec acteurs, préconditions, postconditions, déclencheurs, dépendances et scénarios complets.
 
-Pour lancer un serveur de développement local et visualiser les modifications en temps réel, utilisez :
+---
 
-```bash
-mkdocs serve
-```
+## Diagrammes
 
-Le site sera accessible à l'adresse [http://127.0.0.1:8000](http://127.0.0.1:8000)
+- **Diagramme de cas d’utilisation global** : montre tous les CU et leurs interactions avec les acteurs  
+- **Diagramme d’activités** : représente le flux principal du système, de la recherche de cours à la consultation des résultats et avis  
+- **Modèle C4 (niveau 1 et 2)** : illustre les composants principaux (frontend, API REST, base de données, bot Discord) et leurs communications
 
-### Construction du site (optionnel)
+---
 
-> Cette étape n’est pas nécessaire pour la publication sur GitHub Pages
-
-Pour construire le site :
-
-```bash
-mkdocs build
-```
-
-Les fichiers générés seront dans le dossier `site/`.
-
-### Déploiement
-
-Pour déployer automatiquement le site sur GitHub Pages (branche `gh-pages`)
-
-```bash
-mkdocs gh-deploy
-```
-
-> Cette commande pousse automatiquement le contenu du site sur la branche `gh-pages`. Si la branche n'existe pas, elle est crée automatiquement.
-
-## Structure du projet
-
-- `docs/` : Contient tous les fichiers Markdown du site
-- `mkdocs.yml` : Configuration de MkDocs
-- `requirements.txt` : Dépendances Python
-- `site/` : Site généré (créé lors de la construction) -- *optionnel*
-
-## Personnalisation
-
-1. Modifiez `mkdocs.yml` pour changer la configuration du site
-2. Ajoutez/modifiez les fichiers Markdown (`.md`) dans `docs/`
-3. Personnalisez le thème en modifiant les paramètres dans `mkdocs.yml`
-
-## Licence
-
-Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
-
-## Ressources utiles
-
-- Documentation officielle MkDocs
-- Thème Material for MkDocs

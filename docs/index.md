@@ -10,14 +10,14 @@ title: Vue d'ensemble
     }
 </style>
 
-# Nom du projet
+Plateforme d’aide à la planification de parcours pour étudiaants
 
 ## Équipe
 
-- **`M1`:** Membre 1 (matricule) #nom-utilisateur
+- **`M1`:** Ring Thomas (20162157) #papi_speedrun
 - **`M2`:** Bencheikh El Atmani Ayoub (20237691) #yubito04
-- **`M3`:** Abdelmouhcine Messaad (20287581) #abdel_kb99 
-- **`M4`:** Membre 4 (matricule) #nom-utilisateur
+- **`M3`:** Messaad Abdelmouhcine (20287581) #abdel_kb99 
+- **`M4`:** Ujineza Ursuline (20272011) #boredGenie
 
 ## Description du projet
 
@@ -35,3 +35,7 @@ title: Vue d'ensemble
 | Scénarios liés aux CU                         | 9 octobre    | ✅ Terminé | `M2` `M3` `M4`      |
 | Modèle C4                                     | 9 octobre    | ✅ Terminé | `M1`                |
 | Relecture et mise en page finale              | 10 octobre   | ✅ Terminé | `M1` `M2` `M3` `M4` |
+
+
+## Répartition des tâches
+![Répartition taches ](images/repartition.png)
