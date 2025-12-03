@@ -11,7 +11,18 @@ Cette section présente les principaux diagrammes du projet, incluant les diagra
 ## Diagrammes
 
 **Diagramme des cas d'utilisations**
-![Diagramme du système](../images/Diagramme_CUs.png)
+
+### Recherche de cours (CU09)
+![](../images/recherche-cours.jpg)
+
+### Consultation fiche de cours (CU11)  
+![](../images/consulter-fiche.jpg)
+
+### Comparaison de cours (CU06)
+![](../images/comparer-cours.jpg)
+
+### Soumission d'avis (Phase 2)
+![](../images/soumettre-avis.jpg)
 
 **Diagramme d'activité**
 ![Diagramme du système](../images/diagramme-activite.png)
