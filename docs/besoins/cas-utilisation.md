@@ -29,7 +29,7 @@ Ces cas permettent de comprendre **ce que fait le système**, sans entrer dans l
 | CU09 | Rechercher cours                                | Étudiant (principal) | L’étudiant peut rapidement identifier les cours pertinents à son profil et savoir s’il peut s’y inscrire.                                              |
 | CU10 | Afficher résultats académiques d'un cours       | Étudiant (principal) | L’étudiant obtient des repères sur la difficulté et la réussite des cours pour décider lesquels s’intègrent le mieux à son parcours.                   |
 | CU11 | Consulter la fiche d’un cours                   | Étudiant (principal) | L'étudiant consulte les données essentielles liées à un cours donné.                                                                                   |
-| CU12 | Créer une simulation d’horaire                  | Utilisateur        | L’utilisateur crée une simulation d’horaire à partir de cours choisis afin de visualiser la charge de travail et la compatibilité des plages horaires. |
+| CU12 | Signaler un Avis                 | Utilisateur        | L’utilisateur signale un avis qu'il juge ne respectant pas les règles de modérations établis. |
 | CU13 | Consulter la place d'un cours dans le programme | Utilisateur        | L’utilisateur consulte la contribution d’un cours à la diplomation selon son programme (catégories de crédits, exigences restantes, etc.).             |
 
 
@@ -236,36 +236,36 @@ Ces cas permettent de comprendre **ce que fait le système**, sans entrer dans l
 
 ---
 
-### CU12 - Créer une simulation d’horaire
+### CU12 - Signaler un
 
 **Acteurs** : Utilisateur (principal)  
-**Préconditions** : L’utilisateur est connecté et a sélectionné au moins un cours disponible pour la session à venir.  
-**Postconditions** : Une simulation d’horaire est générée et enregistrée; les conflits éventuels sont signalés.  
-**Déclencheur** : L’utilisateur clique sur « Créer une simulation » ou ajoute un cours à son horaire simulé.  
-**Dépendances** : Données d’horaires de l’API Planifium et informations de cours dans la base locale.  
-**But** : Offrir à l’étudiant une vue interactive de son horaire potentiel afin d’évaluer la charge totale et détecter d’éventuels conflits.
+**Préconditions** : L’utilisateur est authentifié et consulte un avis déjà publié (CU08 — Afficher les avis étudiants)  
+**Postconditions** : Une demande de modération (signalement) est créée dans le système;Le signalement est visible dans la file de modération et l’avis reste visible tant qu’il n’a pas été traité par un modérateur (CU02).  
+**Déclencheur** : Un utilisateur juge qu’un avis est inapproprié, erroné, ou offensant et decide de le reporter.    
+**Dépendances** : CU08 — Afficher les avis étudiants, CU02 — Modérer les avis étudiants (car impliqué après traitement)  
+**But** : Permettre aux utilisateurs de participer à la qualité du contenu en signalant les avis problématiques.
 
 **Scénario principal**  
-1) L’étudiant accède à l’outil de simulation.  
-2) Il sélectionne un trimestre et des cours souhaités.  
-3) Le système récupère les horaires de chaque cours via Planifium.  
-4) Le système affiche une visualisation hebdomadaire de l’horaire.  
-5) L’étudiant ajoute, déplace ou supprime des cours dans la simulation.  
-6) Le système calcule la charge totale de travail et les conflits d’horaire.  
-7) L’étudiant enregistre ou exporte la simulation.  
+1) L’utilisateur consulte la fiche d’un cours (CU11).  
+2) L’utilisateur accède à la liste des avis (CU08).  
+3) L’utilisateur sélectionne l’option “Signaler cet avis” sur un avis spécifique.  
+4) Le système affiche un formulaire de signalement.  
+5) L’utilisateur sélectionne une raison dans une liste (ex : insulte, spam, hors sujet…).  
+6) L’utilisateur soumet le signalement.  
+7) Le système crée une ModerationRequest associée à l’avis.  
+8) Le système affiche un message de confirmation au user.  
+9) Le système notifie les modérateurs qu’un signalement a été ajouté.  
 
 **Scénarios alternatifs**  
-3a. Un ou plusieurs cours ne sont pas disponibles à la session choisie.  
- 3a.1. Le système affiche “Cours non offert ce trimestre.”  
- 3a.2. Il suggère d’autres cours similaires disponibles.  
+5a. Aucune raison n’est sélectionnée  
+ 5a.1. L’utilisateur tente de valider.  
+ 5a.2. Le système affiche « Veuillez sélectionner une raison ».  
+ 5a.3. L’utilisateur complète le champ et reprend le scénario normal à l’étape 6.  
 
-4a. Conflit horaire entre deux cours.  
- 4a.1. Le système signale le conflit visuellement.  
- 4a.2. L’étudiant choisit quel cours garder.  
-
-6a. L’étudiant dépasse le nombre de crédits permis.  
- 6a.1. Le système affiche un avertissement et empêche la sauvegarde.  
-
+6a. L’utilisateur souhaite ajouter une précision  
+ 6a.1. Le système affiche une zone de texte optionnelle.  
+ 6a.2. L’utilisateur ajoute un commentaire.  
+ 6a.3. Le scénario reprend à l’étape 7.  
 
 ---
 
